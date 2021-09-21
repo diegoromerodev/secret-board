@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    .container
+        if user && user.username
+            .upgrade.green-blur
+                h1 UPGRADE TO MEMBER STATUS
+                h4 CURRENT STATUS: #{user.membership ? "MEMBER" : "GUEST"}
+                p UPGRADING YOUR MEMBERSHIP ALLOWS YOU TO VIEW THE AUTHORS OF MESSAGES
+                if user && !user.membership
+                    form.reg-form(action="" method="post")
+                        button.green-blur(type="submit") UPGRADE

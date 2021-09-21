@@ -1,5 +1,26 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    .container
+        if user
+            if errors
+                ul.error-list
+                    for error in errors
+                        li.error= error.msg || error
+            form.reg-form(action="/message/create" method="post")
+                input.white-blur(type="text" name="title" placeholder="Message title")
+                textarea.white-blur(name="text" placeholder="Message body")
+                button.green-blur(type="submit") CREATE SECRET MESSAGE
+        #messages
+            for message in messages
+                .message
+                    if user
+                        if user.membership || user.admin
+                            p.green-blur= "☺ " + message.author.full_name + " "
+                                if user.admin
+                                    a.red-blur(href="/message/" + message.id + "/delete") DELETE MESSAGE
+                    if !user || !user.membership && !user.admin
+                        p.green-blur ☺ Anonymous User
+                    h3.green-blur= message.title
+                    p.green-blur= message.text
+                    p.green-blur= "> Sent: " + message.formatted_date

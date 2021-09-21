@@ -1,0 +1,112 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box; }
+
+body {
+  background: radial-gradient(circle at top left, #5a5a5a 0%, black 50%);
+  min-height: 100vh;
+  font-family: "Courier New", Courier, monospace;
+  color: #41FF00; }
+
+.green-blur {
+  color: #41FF00;
+  text-shadow: 0 0 20px #41FF00;
+  filter: blur(0.2px); }
+
+.white-blur {
+  color: #FFFFF0;
+  text-shadow: 0 0 20px #FFFFF0;
+  filter: blur(0.2px); }
+
+.red-blur {
+  color: #FF0011;
+  text-shadow: 0 0 20px #FF0011;
+  filter: blur(0.2px); }
+
+.intro-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.container {
+  max-width: 1100px;
+  padding: 0 20px;
+  margin: 0 auto; }
+  .container.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
+
+.main-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0; }
+  .main-menu *:not(:last-child) {
+    display: block;
+    margin-right: 10px; }
+  .main-menu a:active {
+    color: #279900; }
+
+.message {
+  border: 3px double #FFFFF0;
+  border-bottom: none;
+  margin-bottom: 40px; }
+  .message > * {
+    padding: 5px;
+    border-bottom: 3px double #FFFFF0; }
+  .message h3 {
+    text-transform: uppercase;
+    font-size: 1.3em; }
+
+.reg-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .reg-form > * {
+    font-family: 'Courier New', Courier, monospace; }
+  .reg-form input, .reg-form textarea {
+    border: 1px solid #FFFFF0;
+    background: transparent;
+    margin: 10px;
+    padding: 5px;
+    width: 50%; }
+    .reg-form input::placeholder, .reg-form textarea::placeholder {
+      color: #FFFFF0;
+      text-transform: uppercase; }
+  .reg-form button {
+    cursor: pointer;
+    text-decoration: underline;
+    background: #41FF00;
+    color: #111;
+    display: inline;
+    padding: 5px;
+    box-shadow: 0 0 10px #41FF00;
+    filter: blur(0.2px);
+    margin-bottom: 10px; }
+
+h1.form {
+  text-align: center;
+  text-transform: uppercase; }
+
+ul.error-list {
+  display: inline;
+  padding: 5px;
+  text-align: center;
+  list-style-type: none; }
+
+.error {
+  color: #FF0011; }
+
+.upgrade {
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #FFFFF0; }
+  .upgrade > * {
+    margin: 10px 0; }
+
+/*# sourceMappingURL=style.css.map */

@@ -4,4 +4,17 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
+    .intro-cont
+        pre.intro-head.green-blur= ascii
+    nav.main-menu
+        a.green-blur(href="/") HOME
+        span |
+        if !user || !user.username
+            a.green-blur(href="/login") LOGIN
+            span |
+            a.green-blur(href="/signup") REGISTER
+        if user && user.username
+            a.green-blur(href="/logout") LOGOUT
+            span |
+            a.green-blur(href="/membership") MEMBERSHIP
     block content

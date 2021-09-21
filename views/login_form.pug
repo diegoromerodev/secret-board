@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    .container
+        if errors.length
+            ul.error-list
+                for error in errors
+                    li.error= error.msg || error
+        h1.form.green-blur= title
+            form.reg-form(action="" method="post")
+                input.white-blur(type="email" name="username" placeholder="email")
+                input.white-blur(type="password" name="password" placeholder="password")
+                button.white-blur(type="submit") ENTER

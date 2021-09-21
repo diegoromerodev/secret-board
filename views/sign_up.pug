@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    .container.length
+        if errors
+            ul.error-list
+                for error in errors
+                    li.error= error.msg || error
+        h1.form.green-blur= title
+            form.reg-form(action="" method="post")
+                input.white-blur(type="email" name="username" placeholder="email")
+                input.white-blur(type="text" name="first_name" placeholder="first name")
+                input.white-blur(type="text" name="last_name" placeholder="last name")
+                input.white-blur(type="password" name="password" placeholder="password")
+                input.white-blur(type="password" name="password_confirmation" placeholder="password confirmation")
+                button.green-blur(type="submit") REGISTER

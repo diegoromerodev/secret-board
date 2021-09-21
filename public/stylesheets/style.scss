@@ -1,0 +1,142 @@
+$green: #41FF00;
+$white: #FFFFF0;
+$black: #111;
+$red: #FF0011;
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle at top left, rgb(90, 90, 90) 0%, rgba(0,0,0,1) 50%);
+    min-height: 100vh;
+    font-family: "Courier New", Courier, monospace;
+    color: $green;
+}
+
+.green-blur {
+    color: $green;
+    text-shadow: 0 0 20px $green;
+    filter: blur(.2px);
+}
+
+.white-blur {
+    color: $white;
+    text-shadow: 0 0 20px $white;
+    filter: blur(.2px);
+}
+
+.red-blur {
+    color: $red;
+    text-shadow: 0 0 20px $red;
+    filter: blur(.2px);
+}
+
+.intro-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1100px;
+    padding: 0 20px;
+    margin: 0 auto;
+    &.center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+.main-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    *:not(:last-child) {
+        display: block;
+        margin-right: 10px;
+    }
+    a:active {
+        color: darken(#41FF00, 20%);
+    }
+}
+
+// MESSAGES \\
+.message {
+    border: 3px double $white;
+    border-bottom: none;
+    margin-bottom: 40px;
+    & > * {
+        padding: 5px;
+        border-bottom: 3px double $white;
+    }
+    h3 {
+        text-transform: uppercase;
+        font-size: 1.3em;
+    }
+}
+
+// FORMS \\
+.reg-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & > * {
+        font-family: 'Courier New', Courier, monospace;
+    }
+    input, textarea {
+        border: 1px solid $white;
+        background: transparent;
+        margin: 10px;
+        padding: 5px;
+        width: 50%;
+        &::placeholder {
+            color: $white;
+            text-transform: uppercase;
+        }
+    }
+    button {
+        cursor: pointer;
+        text-decoration: underline;
+        background: $green;
+        color: $black;
+        display: inline;
+        padding: 5px;
+        box-shadow: 0 0 10px $green;
+        filter: blur(.2px);
+        margin-bottom: 10px;
+    }
+}
+
+h1.form {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+ul.error-list {
+    display: inline;
+    padding: 5px;
+    text-align: center;
+    list-style-type: none;
+}
+
+.error {
+    color: $red;
+}
+
+// MEMBERSHIP \\
+.upgrade {
+    padding: 5px;
+    text-align: center;
+    border: 1px solid $white;
+    & > * {
+        margin: 10px 0;
+    }
+}
